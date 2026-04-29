@@ -1,9 +1,18 @@
-function App() {
+import {BrowserRouter, Routes,Route} from "react-router-dom";
+import UserLayout from "./components/layout/UserLayout";
+import Home from "./pages/Home";
+
+
+const App = () => {
   return (
-    <div>
-      <h1 class='underline'>Wera Ecommerce</h1>
-      <p>React + Vite working!</p>
-    </div>
+    <BrowserRouter>
+    <Routes>
+      <Route path='/' element={<UserLayout/>}>
+        <Route index element={<Home/>} />
+      </Route>
+      <Route>{/*Admin layout*/} </Route>
+    </Routes>
+    </BrowserRouter>
   );
 }
 
